@@ -1,0 +1,16 @@
+rootProject.name = 'hexample'
+
+includeModule(':application:domain')
+includeModule(':application:api')
+includeModule(':application:queries')
+includeModule(':application:use-cases')
+
+includeModule(':vocabulary')
+
+includeModule(':testing:doubles')
+includeModule(':testing:integration-tests')
+
+void includeModule(String projectName) {
+  include(projectName)
+  project(projectName).projectDir = file("code${projectName.replaceAll(':', '/')}")
+}

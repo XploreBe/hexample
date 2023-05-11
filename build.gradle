@@ -1,0 +1,41 @@
+allprojects {
+  apply plugin: 'idea'
+
+  group = 'be.xplore'
+  version = '1.0-SNAPSHOT'
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  idea {
+    module {
+      downloadJavadoc = true
+      downloadSources = true
+    }
+  }
+}
+
+subprojects {
+  apply plugin: 'java'
+
+  java {
+    toolchain {
+      languageVersion = JavaLanguageVersion.of(17)
+    }
+  }
+
+  dependencies {
+    implementation project(':vocabulary')
+
+    implementation platform("jakarta.platform:jakarta.jakartaee-bom:$jakartaVersion")
+    implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+  }
+
+  tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+  }
+}
