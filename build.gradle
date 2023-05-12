@@ -27,12 +27,13 @@ subprojects {
   }
 
   dependencies {
-    implementation project(':vocabulary')
-
     implementation platform("jakarta.platform:jakarta.jakartaee-bom:$jakartaVersion")
     implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
 
+    implementation 'org.slf4j:slf4j-api'
+
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation "org.assertj:assertj-core:$assertjVersion"
   }
 
   tasks.withType(Test).configureEach {

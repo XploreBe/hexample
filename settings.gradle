@@ -5,10 +5,17 @@ includeModule(':application:api')
 includeModule(':application:queries')
 includeModule(':application:use-cases')
 
+includeModule(':adapters:driven:in-memory')
+
+includeModule(':adapters:driving:rest-api')
+
 includeModule(':vocabulary')
+
+includeModule(':spring-boot')
 
 includeModule(':testing:doubles')
 includeModule(':testing:integration-tests')
+
 
 void includeModule(String projectName) {
   include(projectName)

@@ -1,0 +1,8 @@
+dependencies {
+  implementation project(':adapters:driving:rest-api')
+  implementation project(':adapters:driven:in-memory')
+  implementation project(':application:use-cases')
+  implementation project(':application:queries')
+
+  implementation 'org.springframework.boot:spring-boot-starter'
+}

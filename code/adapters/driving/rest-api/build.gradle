@@ -1,0 +1,6 @@
+dependencies {
+  implementation project(':application:api')
+  implementation project(':vocabulary')
+
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+}

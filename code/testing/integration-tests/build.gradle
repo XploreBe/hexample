@@ -1,3 +1,10 @@
 dependencies {
+  testImplementation project(':spring-boot')
+  testImplementation project(':adapters:driven:in-memory')
+
+  testImplementation project(':testing:doubles')
+  testImplementation project(':vocabulary')
+
   testImplementation('org.springframework.boot:spring-boot-starter-test')
+  testImplementation('org.springframework:spring-web')
 }
