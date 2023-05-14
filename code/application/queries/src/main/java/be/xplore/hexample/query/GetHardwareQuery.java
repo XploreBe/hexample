@@ -1,16 +1,13 @@
 package be.xplore.hexample.query;
 
 import be.xplore.hexample.api.hardware.GetHardware;
+import be.xplore.hexample.vocabulary.HardwareId;
 import jakarta.inject.Named;
-import jakarta.inject.Singleton;
 import org.slf4j.Logger;
-
-import java.util.UUID;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
 @Named
-@Singleton
 public class GetHardwareQuery implements GetHardware {
   private static final Logger log = getLogger(GetHardwareQuery.class);
 
@@ -21,7 +18,7 @@ public class GetHardwareQuery implements GetHardware {
   }
 
   @Override
-  public void execute(UUID hardwareId, Presenter presenter) {
+  public void execute(HardwareId hardwareId, Presenter presenter) {
     log.debug("Getting hardware with hardwareId {}", hardwareId);
     archive.get(hardwareId)
         .ifPresentOrElse(presenter::success, presenter::notFound);

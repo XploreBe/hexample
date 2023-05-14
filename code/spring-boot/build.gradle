@@ -1,3 +1,7 @@
+plugins {
+  id 'org.springframework.boot'
+}
+
 dependencies {
   implementation project(':adapters:driving:rest-api')
   implementation project(':adapters:driven:in-memory')
@@ -5,4 +9,8 @@ dependencies {
   implementation project(':application:queries')
 
   implementation 'org.springframework.boot:spring-boot-starter'
+}
+
+bootRun {
+  mainClass = 'be.xplore.hexample.SpringBootStarter'
 }

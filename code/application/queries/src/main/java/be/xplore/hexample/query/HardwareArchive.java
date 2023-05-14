@@ -1,10 +1,11 @@
 package be.xplore.hexample.query;
 
-import be.xplore.hexample.vocabulary.HardwareEntity;
+
+import be.xplore.hexample.vocabulary.HardwareDto;
+import be.xplore.hexample.vocabulary.HardwareId;
 
 import java.util.Optional;
-import java.util.UUID;
 
 public interface HardwareArchive {
-  Optional<HardwareEntity> get(UUID hardwareId);
+  Optional<HardwareDto> get(HardwareId hardwareId);
 }

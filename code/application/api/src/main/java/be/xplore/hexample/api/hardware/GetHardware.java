@@ -1,15 +1,14 @@
 package be.xplore.hexample.api.hardware;
 
-import be.xplore.hexample.vocabulary.HardwareEntity;
-
-import java.util.UUID;
+import be.xplore.hexample.vocabulary.HardwareDto;
+import be.xplore.hexample.vocabulary.HardwareId;
 
 public interface GetHardware {
-  void execute(UUID hardwareId, Presenter presenter);
+  void execute(HardwareId hardwareId, Presenter presenter);
 
   interface Presenter {
 
-    void success(HardwareEntity hardware);
+    void success(HardwareDto hardware);
 
     void notFound();
   }
